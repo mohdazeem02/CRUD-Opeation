@@ -1,0 +1,28 @@
+﻿@model IEnumerable<example20CRUD.Models.EmpModel>
+@{
+    ViewBag.Title = "GetAllEmpDetails";
+}
+
+<h2>GetAllEmpDetails</h2>
+<p>@Html.ActionLink("Add Record","Add")</p>
+<table border="1">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>City</th>
+        <th>Address</th>
+    </tr>
+    @foreach(var s in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(e => s.id)</td>
+                    <td>@Html.DisplayFor(e => s.Name)</td>
+                    <td>@Html.DisplayFor(e => s.City)</td>
+                    <td>@Html.DisplayFor(e => s.Address)</td>
+                    <td>@Html.ActionLink("Edit","EditEmp",new { id = s.id })|
+                     @Html.ActionLink("Delete","DeleteEmp",new {id=s.id},
+                    new { onclick = "return confirm('Are you sure wants to delete ?');" }) </td>
+                </tr>
+            }
+</table>
+

@@ -1,0 +1,35 @@
+﻿@model example20CRUD.Models.EmpModel
+@{
+    ViewBag.Title = "EditEmp";
+}
+
+<h2>EditEmp</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(e => e.id)</td>
+            <td>@Html.EditorFor(e => e.id)</td>
+            <td>@Html.ValidationMessageFor(e => e.id)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(e => e.Name)</td>
+            <td>@Html.EditorFor(e => e.Name)</td>
+            <td>@Html.ValidationMessageFor(e => e.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(e => e.City)</td>
+            <td>@Html.EditorFor(e => e.City)</td>
+            <td>@Html.ValidationMessageFor(e => e.City)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(e => e.Address)</td>
+            <td>@Html.EditorFor(e => e.Address)</td>
+            <td>@Html.ValidationMessageFor(e => e.Address)</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Update" /></td>
+        </tr>
+    </table>
+}
+
